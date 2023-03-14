@@ -20,8 +20,10 @@ We need to Bucktize the given values, i.e we need to check in which bucket the v
 
 The given code defines a class BucketRange with a single function getRange that takes a double value num as input, calculates the bucket range for the given value.
 
-If the value of the last two digits after the decimal point is greater than or equal to 50, then the bucket range is from `num - (last two digits/1000) + 0.050 to num + (99 - last two digits)/1000`.
+If the value of the last two digits after the decimal point is greater than or equal to 50, then the bucket range is from 
+`num - (last two digits/1000) + 0.050 to num + (99 - last two digits)/1000`.
 Otherwise, the bucket range is from `num - (last two digits/1000) to num + (49 - last two digits)/1000`.
+#### Code
 ```
     var lastTwoDigits = ((num*1000)%100).toDouble  // Fetching the last two digits
     var leftRange = 0.0
@@ -39,7 +41,7 @@ Otherwise, the bucket range is from `num - (last two digits/1000) to num + (49 -
 
     print(f"$num -> Bucket : $leftRange%,.3f" + " - " + f"$rightRange%,.3f\n")
  ```
- ###Test Run
+ ### Test Run
    
    <img width="322" alt="Screenshot 2023-03-14 at 12 21 13 PM" src="https://user-images.githubusercontent.com/123619674/224919090-623f2a44-7dae-408b-91eb-be53fe3feb7d.png">
  
@@ -76,7 +78,7 @@ The <b>printPlayerInfoWithRanks</b> takes a list of Player objects and prints ou
     }
  ```
  
- ###Question 2.1
+ ### Question 2.1
  Created a function playerWithMaxRuns, it takes List[Player] as input and  List[Player] as output.In order to get the player with the most runs, used the maxBy method with the Runs attribute.
  ```
    def playerWithMaxRuns(players : List[Player]): List[Player] = {
@@ -85,7 +87,7 @@ The <b>printPlayerInfoWithRanks</b> takes a list of Player objects and prints ou
   
  obj.printPlayerInfo(playerWithMaxRuns(players))
  ```
- ###Question 2.2
+ ### Question 2.2
  
 created a function top5PlayersByRuns, it takes List[Player] as input and  List[Player] as output.To get the top five players with the most runs, used the sortBy method with the Runs attribute and sorted by negative (Runs) to get in desc order of runs
 ```
@@ -96,7 +98,7 @@ created a function top5PlayersByRuns, it takes List[Player] as input and  List[P
   obj.printPlayerInfo(top5PlayersByRuns(players))
  ```
  
- ###Question 2.3
+ ### Question 2.3
  
 created a function top5PlayersByWickets, it takes List[Player] as input and  List[Player] as output.To get the top five players with the most wickets, used the sortBy method with the wickets attribute and sorted by negative (Wickets) to get in desc order of wickets
  ```
@@ -107,7 +109,7 @@ created a function top5PlayersByWickets, it takes List[Player] as input and  Lis
     obj.printPlayerInfo(top5PlayersByWickets(players))
  ```
  
- ###Question 2.4
+ ### Question 2.4
  created a function top5PlayersByCriteria, it takes List[Player] as input and  List[Player] as output.To get the top five players with the given criteria (5*wickets + 0.05*runs), used the sortBy method with the given metric and sorted by negative (given metric) to get in desc order of given metric
  ```
    def top5PlayersByCriteria(players: List[Player]): List[Player] ={
@@ -117,7 +119,7 @@ created a function top5PlayersByWickets, it takes List[Player] as input and  Lis
    obj.printPlayerInfoWithRanks(top5PlayersByCriteria(players))
   ```
   
-  ###Input
+  ### Input
   ```
       Player(2021, "Sam", "India", 23, 2300, 3),
       Player(2021, "Ram", "India", 23, 300, 30),
@@ -126,7 +128,7 @@ created a function top5PlayersByWickets, it takes List[Player] as input and  Lis
       Player(2022, "Punith", "Eng", 22, 908, 23)
    ```
    
-   ###Test Run
+   ### Test Run
    <img width="959" alt="Screenshot 2023-03-14 at 12 50 04 PM" src="https://user-images.githubusercontent.com/123619674/224924819-2815b953-e490-4e84-9e84-117279511b9f.png">
 
 
