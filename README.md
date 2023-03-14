@@ -1,4 +1,4 @@
-# Scala_mid_assignment
+# Scala Assignment
 
 ### Question - 1
 
