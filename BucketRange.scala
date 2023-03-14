@@ -35,7 +35,7 @@ object BucketRange {
   * */
   def main(args: Array[String]): Unit = {
     val obj = new BucketRange() // Creation of object for above created class
-    val input = Array(12.05, 12.99, 10.33, 11.45, 13.50)
+    val input = Array(12.05, 12.99, 10.33, 11.45, 13.50,11.99999,5.4999999999)
     for (i <- input) {
       obj.getRange(i)      //calling the getRange function to fetch the bucket details
     }
