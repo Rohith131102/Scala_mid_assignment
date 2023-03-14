@@ -2,23 +2,21 @@ case class Player(Year: Int, Name: String, Country: String, Matches: Int, Runs: 
 
 class CricketStats {
   // This method takes a list of Player objects and prints out their information such as name, country, year, runs, matches, and wickets.
-  private def printPlayerInfo(players: List[Player]): Unit = {  //Printing player info
-    for (player <- players) {
-      println( "Name: " + player.Name + ", Country: " + player.Country + ", Year: " + player.Year + ", Runs: " + player.Runs + ", Matches: " + player.Matches + ", Wickets: " + player.Wickets)
+ private def printPlayerInfo(players: List[Player]): Unit = {  //Printing player info
+   for (player <- players) {
+      println( "Name: " + player.Name + ", Country: " + player.Country + ", Year: " + player.Year + ", Matches: " + player.Matches + ", Runs: " + player.Runs + ", Wickets: " + player.Wickets)
     }
   }
 
-
   // This method takes a list of Player objects and prints out their information such as name, country, year, runs, matches, wickets, and Performance.
-  private def printPlayerInfoWithRanks(players: List[Player]): Unit = {
+ private def printPlayerInfoWithRanks(players: List[Player]): Unit = {
     var rank = 1
     for (player <- players) {
       // Printing the data in the object
-      println("Rank: " + rank +", Name: " + player.Name + ", Country: " + player.Country + ", Year: " + player.Year + ", Runs: " + player.Runs + ", Matches: " + player.Matches + ", Wickets: " + player.Wickets + ", Performance :" + (5 * player.Wickets + 0.05 * player.Runs))
+      println("Rank: " + rank +", Name: " + player.Name + ", Country: " + player.Country + ", Year: " + player.Year +  ", Matches: " + player.Matches + ", Runs: " + player.Runs + ", Wickets: "  + player.Wickets + ", Performance :" + (5 * player.Wickets + 0.05 * player.Runs))
       rank += 1
     }
   }
-
 
 
 }
@@ -31,7 +29,7 @@ object CricketStats {
   * */
   // function to get player with max runs
   def playerWithMaxRuns(players : List[Player]): List[Player] = {
-    return List(players.maxBy(-_.Runs))
+    return List(players.maxBy(_.Runs))
   }
 
   //function to get top 5 players by runs
