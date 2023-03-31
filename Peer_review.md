@@ -64,9 +64,11 @@ Sample -Year, PlayerName, Country, Matches, Runs, Wickets 2021, Sam, India, 23, 
 }
 ```
 #### Question-2
--The scala code stores information about cricket players using a case class called Player.
-```case class Player(Year: Int, Name: String, Country: String, Matches: Int, Runs: Int, Wickets: Int)```
--defined a read_data_from_file function which uses the Source library to read data from the file, runs.txt. It then maps the lines of the file to player objects by splitting each line and creating a new Player object from the extracted values. The function returns a list of Player objects.
+- The scala code stores information about cricket players using a case class called Player.
+```
+case class Player(Year: Int, Name: String, Country: String, Matches: Int, Runs: Int, Wickets: Int)
+```
+- defined a read_data_from_file function which uses the Source library to read data from the file, runs.txt. It then maps the lines of the file to player objects by splitting each line and creating a new Player object from the extracted values. The function returns a list of Player objects.
 ```  private def read_data_from_file(): List[Player] = {
     val players = Source.fromFile("//Users//chakradhar//Desktop//runs.txt")
       .getLines()
@@ -77,7 +79,7 @@ Sample -Year, PlayerName, Country, Matches, Runs, Wickets 2021, Sam, India, 23, 
     return players
   }
 ```
--defined <b>print_player_info function</b> which takes a list of Player objects and prints out information such as the name, country, year, runs, matches, and wickets for each player.similarly defined <b>print_player_info_with_ranks</b>.it also calculates and prints out a performance metric provided in question.
+- defined <b>print_player_info function</b> which takes a list of Player objects and prints out information such as the name, country, year, runs, matches, and wickets for each player.similarly defined <b>print_player_info_with_ranks</b>.it also calculates and prints out a performance metric provided in question.
 ```
   private def print_player_info_with_ranks(playerobjects: List[Player]): Unit = {
     var cnt = 1 
@@ -88,16 +90,16 @@ Sample -Year, PlayerName, Country, Matches, Runs, Wickets 2021, Sam, India, 23, 
     }
   }
 ```
--To find the player with the highest number of runs, used the sortBy method with the Runs attribute and a ordered in descending order and took the top element
--To find the top 5 players by runs,used the sortBy method with the Runs attribute and a ordered in descending order and took the top 5 elements
+- To find the player with the highest number of runs, used the sortBy method with the Runs attribute and a ordered in descending order and took the top element
+- To find the top 5 players by runs,used the sortBy method with the Runs attribute and a ordered in descending order and took the top 5 elements
 ```
 obj.print_player_info(players.sortBy(_.Runs)(Ordering[Int].reverse).take(5))
 ```
--To find the top 5 players by wickets,used the sortBy method with the Wickets attribute and a ordered in descending order and took the top 5 elements
+- To find the top 5 players by wickets,used the sortBy method with the Wickets attribute and a ordered in descending order and took the top 5 elements
 ```
 obj.print_player_info(players.sortBy(_.Wickets)(Ordering[Int].reverse).take(5))
 ```
--To find the top 5 players by performance based on given metric,used the sortBy method with a custom function that computes performance based on the metric (5*Wickets+0.05*runs) and ordered it in descending order and took the top 5 players
+- To find the top 5 players by performance based on given metric,used the sortBy method with a custom function that computes performance based on the metric (5*Wickets+0.05*runs) and ordered it in descending order and took the top 5 players
 ```
 obj.print_player_info_with_ranks(players.sortBy(r => 5 * r.Wickets + 0.05 * r.Runs)(Ordering[Double].reverse).take(5))
 ```
